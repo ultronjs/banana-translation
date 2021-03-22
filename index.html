@@ -6,12 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana Talk</title>
     <style>
+        :root{
+            --primary-color:#FCD34D;
+        }
+        body{
+            margin: 0px;
+        }
+        header h1{
+            text-align: center;
+            background-color: var(--primary-color);
+            height: 10vh;
+            margin-block-start: 0px;
+            margin-block-end: 0px;
+            margin-top: 0px;
+            border-top-left-radius: 2rem;
+        }
         textarea{
             display: block;
             height: 10vh;
             width: 600px;
             padding: 1rem;
-            margin: 1rem;
+            margin: auto;
         }
         #output{
             display: block;
@@ -20,18 +35,52 @@
             width: 600px;
             padding: 1rem;
             margin: 1rem;
+            margin: auto;
         }
         #btn-translate{
             display: block;
-            margin: 1rem; 
+            background-color: var(--primary-color);
+            font-size:large;
+            border-radius: 0.5rem;
+            border: 1px solid black;
+            padding: 1rem 2rem;
+            margin: auto; 
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        footer{
+            text-align: center;
+            background-color: var(--primary-color);
+            height: 15vh;
+            border-bottom-right-radius: 2rem;
+        }
+        .list-non-bullet{
+            list-style: none;
+            padding-inline-start: 0px
+        }
+        .footer-para{
+            margin:auto;
+            width: 600px;
         }
     </style>
 </head>
 <body>
-    <p style="font-size: large;">Banana Talk</p>
+    <header>
+        <h1>Banana Talk</h1>
+    </header>
+    <p style="font-size: large;text-align: center;">Banana Talk</p>
     <textarea placeholder="Please Enter text to translate"></textarea>
     <button id="btn-translate">Translate</button>
+    <p style="text-align: center;">Your Output is below:</p>
     <div id="output"></div>
+    <footer>
+        <h2>About</h2>
+        <p class='footer-para'>Are you a fan of minions? Did you know that the gibberish 
+            they say is an actual language. Use the translator to
+             convert your text from English to Minion speak or Banana 
+             language.
+        </p>
+    </footer>
 </body>
 <script src="app.js"></script>
 </html>
