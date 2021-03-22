@@ -5,7 +5,9 @@ var testUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
 var serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
 function urlToFetch(userInput){
-    return serverUrl + "?text=" + userInput;
+    var fetchUrl = serverUrl + "?text=" + userInput;
+    console.log(encodeURI(fetchUrl))
+    return encodeURI(fetchUrl)
 }
 
 function errorHandler(error){
@@ -15,7 +17,8 @@ function errorHandler(error){
 
 btnTranslate.addEventListener("click",function read(){
     var userInput = inputbox.value;
-    fetch(urlToFetch(userInput))
+    console.log(decodeURI(urlToFetch(userInput)))
+    fetch(decodeURI(urlToFetch(userInput)))
     .then(response => response.json()
     .then(json =>outputBox.innerHTML = json.contents.translated))
     .catch(errorHandler)
